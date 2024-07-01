@@ -3,7 +3,7 @@ import { AppContext } from '../context/AppContext';
 
 const Remaining = () => {
     //initialize an array and value based on context
-    const { expenses, budget } = useContext(AppContext);
+    const { expenses, budget, currency } = useContext(AppContext);
 
     //expenses has a member function called reduce
     //it takes a callback lambda and initial value,
@@ -18,7 +18,7 @@ const Remaining = () => {
 
     return(
         <div className={`alert ${alertType}`}>
-            <span>Remaining: £{budget - totalExpenses}</span>
+            <span>Remaining: {currency}{budget - totalExpenses}</span>
         </div>
     );
 };
